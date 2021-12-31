@@ -1,10 +1,14 @@
 from selenium import webdriver
 import time as t
+import os
 from PIL import Image
 # Depending on your need, you can uncomment the last few lines of codes to save the screenshot of your today's post and open it for checking purpose.
 
 
 if __name__ == '__main__':
+    # Open the post.txt for you to edit the post content.
+    os.startfile('post.txt')
+    t.sleep(120)  # Leave 2 mins to check the post content.
     with open('config.txt') as f1, open('post.txt', encoding='utf-8') as f2:
         USERNAME, PASSWORD = f1.readlines()
         USERNAME = USERNAME.rstrip()
