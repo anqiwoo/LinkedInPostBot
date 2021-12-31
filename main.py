@@ -41,6 +41,7 @@ if __name__ == '__main__':
     t.sleep(2)
     # browser.save_screenshot("TodayPost.png")
     browser.quit()  # Close the browser
+    print('Everything went well! Hooray!')
 
     # # Open up the png file for checking
     # img = Image.open('TodayPost.png')
