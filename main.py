@@ -25,7 +25,7 @@ if __name__ == '__main__':
     elem.submit()
 
     # Direct to the Create a Post View
-    browser.find_element_by_id('ember44').click()
+    browser.find_element_by_id('ember35').click()
 
     # Enter the Post Content
     t.sleep(2)
