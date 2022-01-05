@@ -131,4 +131,5 @@ dmypy.json
 # Init File
 config.txt
 post.txt
+read.txt
 TodayPost.png
