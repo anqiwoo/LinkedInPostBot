@@ -6,6 +6,16 @@ from PIL import Image
 
 
 def post(text):
+    browser = webdriver.Chrome('chromedriver.exe')
+
+    # Login to linkedin
+    browser.get('https://www.linkedin.com/login')
+    elem = browser.find_element_by_name("session_key")
+    elem.send_keys(USERNAME)
+    elem = browser.find_element_by_name("session_password")
+    elem.send_keys(PASSWORD)
+    elem.submit()
+
     # Direct to the Create a Post View
     t.sleep(2)
     browser.find_element_by_id('ember35').click()
@@ -29,6 +39,9 @@ def post(text):
     # img = Image.open('TodayPost.png')
     # img.show()
 
+    # Close the browser
+    browser.quit()
+
 
 if __name__ == '__main__':
     # Open the post.txt for you to edit the post content.
@@ -41,19 +54,6 @@ if __name__ == '__main__':
         POSTTEXT = f2.read()
         READTEXT = f3.read()
 
-    browser = webdriver.Chrome('chromedriver.exe')
-
-    # Login to linkedin
-    browser.get('https://www.linkedin.com/login')
-    elem = browser.find_element_by_name("session_key")
-    elem.send_keys(USERNAME)
-    elem = browser.find_element_by_name("session_password")
-    elem.send_keys(PASSWORD)
-    elem.submit()
-
     # Make two Posts
     post(POSTTEXT)
     post(READTEXT)
-
-    # Close the browser
-    browser.quit()
