@@ -18,7 +18,8 @@ def post(text):
 
     # Direct to the Create a Post View
     t.sleep(2)
-    browser.find_element_by_id('ember35').click()
+    browser.find_element_by_xpath(
+        "//div[@class='display-flex align-items-center mt2 mr4 ml4']//span[@class='artdeco-button__text']").click()
 
     # Enter the Post Content
     t.sleep(2)
